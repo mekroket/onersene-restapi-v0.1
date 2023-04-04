@@ -2,5 +2,5 @@ const router = require('express').Router();
 
 const veri = function(){
     console.log(veri);
-    console.log(veri);
+    console.log(veri); //selam abi
 }
