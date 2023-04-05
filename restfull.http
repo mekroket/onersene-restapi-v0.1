@@ -5,11 +5,11 @@ POST http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-    "name":"oguz2",
-    "surname":"ekin2",
-    "email":"oguz2@gmail.com",
-    "phone":"05539191772",
-    "country":"almanya",
+    "name":"yücel",
+    "surname":"akgül",
+    "email":"yücel@gmail.com",
+    "phone":"05538080143",
+    "country":"türkiye",
     "gender":"erkek",
     "address":"mahmudiye mah 303"
 }
@@ -23,10 +23,10 @@ PATCH http://localhost:3000/api/users/642de10dee9b0624c4f8bdb5
 Content-Type: application/json
  
 {
-    "name":"oguz2",
-    "surname":"ekin2",
-    "email":"oguz2@gmail.com",
-    "phone":"05539191772",
+    "name":"oguz3",
+    "surname":"ekin3",
+    "email":"oguz3@gmail.com",
+    "phone":"05539191773",
     "country":"almanya",
     "gender":"erkek",
     "address":"mahmudiye mah 303"
@@ -39,7 +39,7 @@ POST http://localhost:3000/api/users/login
 Content-Type: application/json
 
 {
-    "phone":"05539191771"
+    "phone":"05538080143"
 }
 
 ###
