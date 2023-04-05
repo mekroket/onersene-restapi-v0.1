@@ -1,8 +1,6 @@
 //! imports
 const jwt = require('jsonwebtoken');
 const User = require('../models/userModel');
-const express = require('express')
-const router = express.Router();
 
 
 // auth and token control
@@ -27,6 +25,7 @@ const auth = async (req,res,next)=>{
         next(e)
     }
 }
+
 
 
 

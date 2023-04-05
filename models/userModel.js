@@ -1,7 +1,6 @@
 //! imports
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const joi = require('@hapi/joi');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const createError = require('http-errors');
@@ -58,6 +57,10 @@ const UserSchema = new Schema({
         minlength:10,
         trim:true,
         maxlength:60
+    },
+    isAdmin:{
+        type:Boolean,
+        default:false
     }
 },{collection:'noadminuser',timestapms:true});
 
@@ -65,13 +68,13 @@ const UserSchema = new Schema({
 
 // shema rules
 const schema = Joi.object({
-    name : joi.string().min(2).max(50).trim(),
+    name : Joi.string().min(2).max(50).trim(),
     surname : Joi.string().min(3).max(50).trim(),
     email: Joi.string().trim().email(),
     phone : Joi.string().min(11).max(11).trim(),
-    country: joi.string().min(2).max(50).trim(),
-    gender : joi.string().min(5).max(5).trim(),
-    address: joi.string().min(2).max(100).trim(), 
+    country: Joi.string().min(2).max(50).trim(),
+    gender : Joi.string().min(5).max(5).trim(),
+    address: Joi.string().min(2).max(100).trim(), 
 
 })
 
@@ -112,6 +115,7 @@ UserSchema.methods.tojSON = function(){
 UserSchema.statics.login = async (phone)=>{
     const {error,value} = schema.validate({phone});
     if (error) {
+        
         throw createError(400,error);
     }
 

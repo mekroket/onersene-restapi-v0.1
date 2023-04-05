@@ -1,6 +1,6 @@
 
 //hata yakalayıcı
-const errorCatcher=(err,res,req,next)=>{
+const errorCatcher = (err,req,res,next)=>{
 
     if (err.code===11000) {
         return res.json({
@@ -17,6 +17,7 @@ const errorCatcher=(err,res,req,next)=>{
     }
 
     res.status(err.statusCode||500);
+
     res.json({
         hataKodu:err.statusCode||400,
         mesaj:err.message
