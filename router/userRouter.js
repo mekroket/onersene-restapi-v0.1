@@ -1,12 +1,9 @@
+//! imports
 const router = require('express').Router();
-
-const veri = function(){
-    console.log(veri);
-}
-
+const authMiddleware = require('../middleware/authMiddleware');
+const adminMiddleware = require('../middleware/adminMiddleware');
+const errorMiddleware = require('../middleware/errorMiddleware');
 
 
-
-const veri2 = function(){
-    console.log(veri2);
-}
+// all users in list
+router.get('/me',authMiddleware)
