@@ -5,10 +5,10 @@ POST http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-    "name":"yücel",
-    "surname":"akgül",
-    "email":"yücel@gmail.com",
-    "phone":"05538080143",
+    "name":"furkan",
+    "surname":"edemirbas",
+    "email":"furkan@gmail.com",
+    "phone":"05511095919",
     "country":"türkiye",
     "gender":"erkek",
     "address":"mahmudiye mah 303"
@@ -23,11 +23,11 @@ PATCH http://localhost:3000/api/users/642de10dee9b0624c4f8bdb5
 Content-Type: application/json
  
 {
-    "name":"oguz3",
-    "surname":"ekin3",
-    "email":"oguz3@gmail.com",
-    "phone":"05539191773",
-    "country":"almanya",
+    "name":"furkan",
+    "surname":"edemirbas",
+    "email":"furkan@gmail.com",
+    "phone":"05511095919",
+    "country":"türkiye",
     "gender":"erkek",
     "address":"mahmudiye mah 303"
     
@@ -39,7 +39,7 @@ POST http://localhost:3000/api/users/login
 Content-Type: application/json
 
 {
-    "phone":"05538080143"
+    "phone":"05539191771"
 }
 
 ###
@@ -68,3 +68,63 @@ Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDJkZTEwZG
 GET http://localhost:3000/api/users
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDJkZTBmM2VlOWIwNjI0YzRmOGJkYjQiLCJpYXQiOjE2ODA3Mjk4MzksImV4cCI6MTY4MDczMzQzOX0.WZwQZ5Ru7E0OZHLKN3maeSoykY97hcInBMGQp2mkSVs
 // token ile admin kontrolü,eğer verilen token admin ise diğer kullanıcılaro gçrebilir değil ise göremez
+
+
+
+
+////////////////////////////////////////
+// shop api
+
+###
+POST http://localhost:3000/api/shop
+Content-Type: application/json
+
+{
+    "category": "telefon",
+    "name": "Adams Mayo",
+    "address": "196 Hendrickson Street, Fillmore, North Carolina, 9881",
+    "point": "4",
+    "header": "Le2",
+    "section": "Pennington Jennings",
+    "price": "$1,693.95",
+    "approved": false,
+    "isAdmin": false,
+    "active": false,
+    "image": "http://placehold.it/32x32"
+}
+
+###
+// all shop list page
+GET http://localhost:3000/api/shop
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDJkZTBmM2VlOWIwNjI0YzRmOGJkYjQiLCJpYXQiOjE2ODA4MTYxODQsImV4cCI6MTY4MDgxOTc4NH0.6e1l7EvTCZPLyc29ScT9qsQkxq8LV5E_VQZLyn852RA
+
+
+
+###
+DELETE http://localhost:3000/api/shop/642f23e3734b5c30fc00d3d7
+Content-Type: application/json
+
+###
+PATCH http://localhost:3000/api/shop/642f23a4734b5c30fc00d3d6
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDJkZTBmM2VlOWIwNjI0YzRmOGJkYjQiLCJpYXQiOjE2ODA4MTExOTcsImV4cCI6MTY4MDgxNDc5N30.ZBuY52Z6Tb3SYnS2y5ZcqMX6aytxtJ_aRnxAX2MdFfg
+
+{
+    "category": "telefon1",
+    "name": "Desiree Yang",
+    "address": "623 Fay Court, Cotopaxi, Nebraska, 4979",
+    "point": "4",
+    "header": "Hurley",
+    "section": "Luella Lambert",
+    "price": "$3,185.78",
+    "approved": false,
+    "isAdmin": true,
+    "active": true,
+    "image": "http://placehold.it/32x32"
+}
+
+###
+// get id and get shop
+GET http://localhost:3000/api/shop/642f23a4734b5c30fc00d3d6
+Content-Type: application/json

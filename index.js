@@ -8,7 +8,7 @@ const errorMidleware = require('./middleware/errorMiddleware')
 
 //router import
 const userRouter = require('./router/userRouter');
-
+const shopRouter = require('./router/shopRouter');
 
 
 //express using
@@ -16,9 +16,9 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-
+// routers
 app.use('/api/users',userRouter)
-
+app.use('/api/shop',shopRouter)
 
 // error management
 app.use(errorMidleware)

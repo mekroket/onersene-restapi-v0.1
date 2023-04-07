@@ -1,6 +1,6 @@
 //! imports
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema();
+const Schema = mongoose.Schema;
 const Joi = require('@hapi/joi');
 const createError = require('http-errors');
 const bcrypt = require('bcrypt');
@@ -29,27 +29,25 @@ const shopSchema = new Schema({
         maxlength:60
     },
     point:{
-        type:Boolean,
+        type:Number,
         required:true,
         trim:true,
     },
-    service:{
-        header:{
-            type:String,
-            required:true,
-            trim:true
-        },
-        section:{
-            type:String,
-            required:true,
-            trim:true,
-        },
-        price:{
-            type:String,
-            required:true,
-            trim:true,
-            maxlength:5
-        }
+    header:{
+        type:String,
+        required:true,
+        trim:true
+    },
+    section:{
+        type:String,
+        required:true,
+        trim:true,
+    },
+    price:{
+        type:String,
+        required:true,
+        trim:true,
+        maxlength:10
     },
     approved:{
         type:Boolean,
@@ -66,15 +64,24 @@ const shopSchema = new Schema({
     image:{
         type:String
     }
-},{collenction:'shop',timestapms:true});
+},{collection:'shop',timestapms:true});
 
 
 // shop info joi for rules
 const schema = Joi.object({
     category:Joi.string().min(3).max(20).trim(),
     name:Joi.string().min(3).max(20).trim(),
-    address:Joi.string().min(3).max(20).trim(),
-    service:Joi.string().min(3).max(20).trim()
+    address:Joi.string().min(3).max(60).trim(),
+    header:Joi.string().min(3).max(30).trim(),
+    section:Joi.string().min(3).max(30).trim(),
+    price:Joi.string().min(3).max(30).trim(),
+    point:Joi.string().max(2).trim(),
+    approved:Joi.boolean(),
+    isAdmin:Joi.boolean(),
+    active:Joi.boolean(),
+    image:Joi.string().trim(),
+
+          
 });
 
 // new shop
@@ -91,7 +98,7 @@ shopSchema.statics.joiValidationForUpdate = function (shopObject) {
 
 // shop info
 shopSchema.methods.toJSON = function(){
-    const shop = tihs.toObject();
+    const shop = this.toObject();
     delete shop._id;
     delete shop.createdAt;
     delete shop.updatedAt;
