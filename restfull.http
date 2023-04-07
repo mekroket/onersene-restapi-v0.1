@@ -66,7 +66,7 @@ Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDJkZTEwZG
 ###
 // admin control
 GET http://localhost:3000/api/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDJkZTBmM2VlOWIwNjI0YzRmOGJkYjQiLCJpYXQiOjE2ODA3Mjk4MzksImV4cCI6MTY4MDczMzQzOX0.WZwQZ5Ru7E0OZHLKN3maeSoykY97hcInBMGQp2mkSVs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDJkZTBmM2VlOWIwNjI0YzRmOGJkYjQiLCJpYXQiOjE2ODA4MjEyNTAsImV4cCI6MTY4MDgyNDg1MH0.sIWeN_FU2axZoPempwUm4j_Z00fswoWnKHCf-_bGUF8
 // token ile admin kontrolü,eğer verilen token admin ise diğer kullanıcılaro gçrebilir değil ise göremez
 
 
@@ -97,7 +97,7 @@ Content-Type: application/json
 // all shop list page
 GET http://localhost:3000/api/shop
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDJkZTBmM2VlOWIwNjI0YzRmOGJkYjQiLCJpYXQiOjE2ODA4MTYxODQsImV4cCI6MTY4MDgxOTc4NH0.6e1l7EvTCZPLyc29ScT9qsQkxq8LV5E_VQZLyn852RA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDJkZTBmM2VlOWIwNjI0YzRmOGJkYjQiLCJpYXQiOjE2ODA4MjEyNTAsImV4cCI6MTY4MDgyNDg1MH0.sIWeN_FU2axZoPempwUm4j_Z00fswoWnKHCf-_bGUF8
 
 
 
@@ -126,5 +126,5 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDJkZTBmM
 
 ###
 // get id and get shop
-GET http://localhost:3000/api/shop/642f23a4734b5c30fc00d3d6
+GET http://localhost:3000/api/shop/642f4bc8d9ee4d5b84d668b4
 Content-Type: application/json
