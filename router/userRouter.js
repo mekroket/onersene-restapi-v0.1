@@ -12,12 +12,6 @@ router.get('/',[authMiddleware,adminMiddleware],userController.allUserList)
 router.get('/me',authMiddleware,userController.loginUserİnfo)
 
 
-// changes
-router.get('/me',authMiddleware,userController.loginUserİnfo,AdminUserİnfo)
-
-// changes2
-router.get('/me',authMiddleware,userController.loginUserİnfo)
-
 // logined user update
 router.patch('/me',authMiddleware,userController.loginUserUpdate)
 
