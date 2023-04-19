@@ -11,6 +11,10 @@ router.get('/',[authMiddleware,adminMiddleware],userController.allUserList)
 // user get token and user control for login
 router.get('/me',authMiddleware,userController.loginUserİnfo)
 
+
+// changes
+router.get('/me',authMiddleware,userController.loginUserİnfo)
+
 // logined user update
 router.patch('/me',authMiddleware,userController.loginUserUpdate)
 
