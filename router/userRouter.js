@@ -13,7 +13,7 @@ router.get('/me',authMiddleware,userController.loginUserİnfo)
 
 
 // logined user update
-router.patch('/me',authMiddleware,userController.loginUserUpdate)
+router.patch('/me',authMiddleware,userController.loginUserUpdate) //tess
 
 //create new user
 router.post('/',userController.newUserCreate)
