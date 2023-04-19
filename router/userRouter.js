@@ -24,6 +24,9 @@ router.patch('/:id',userController.adminUserUpdate)
 // login
 router.post('/login',userController.login)
 
+// changes
+router.post('/login',userController.login)
+
 //admin user delete
 router.delete('/:id',[authMiddleware,adminMiddleware],userController.adminDeleteUser)
 
