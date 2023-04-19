@@ -13,6 +13,9 @@ router.get('/me',authMiddleware,userController.loginUserİnfo)
 
 
 // changes
+router.get('/me',authMiddleware,userController.loginUserİnfo,AdminUserİnfo)
+
+// changes2
 router.get('/me',authMiddleware,userController.loginUserİnfo)
 
 // logined user update
@@ -32,3 +35,5 @@ router.delete('/:id',[authMiddleware,adminMiddleware],userController.adminDelete
 
 
 module.exports = router
+
+
