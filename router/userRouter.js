@@ -13,7 +13,7 @@ router.get('/me',authMiddleware,userController.loginUserİnfo)
 
 
 // logined user update
-// test commit
+// test committ
 router.patch('/me',authMiddleware,userController.loginUserUpdate)
 
 //create new user
